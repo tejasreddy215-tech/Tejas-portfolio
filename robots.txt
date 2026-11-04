@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tejasreddy215-tech.github.io/Tejas-portfolio/sitemap.xml
+
