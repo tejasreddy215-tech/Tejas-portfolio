@@ -77,7 +77,7 @@ When `githubUrl` or `liveUrl` is `null`, the corresponding link button is automa
 
 ### 2. Replace Images
 * **Project thumbnails:** Place 600x500 JPG/PNG/WebP/SVG images in `assets/images/projects/` and update the `image` path in `js/data.js`.
-* **DitherVeil showcase image:** Replace `assets/images/showcase.svg` or change the `src` attribute on `#veilImg` in `index.html`.
+* **DitherVeil showcase image:** Uses the Unsplash showcase image (`https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop` with cached fallback in `assets/images/showcase.jpg`). To change it, update the `src` attribute on `#veilImg` in `index.html`.
 * **Profile portrait:** In `index.html` inside `#about`, replace `<div class="portrait">...</div>` with `<img class="portrait" src="assets/images/profile.jpg" alt="K. Tejas Reddy">`.
 
 ### 3. Enable the Resume Button

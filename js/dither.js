@@ -75,8 +75,8 @@
           pattern: "floyd",
           palette: "duotone",
           pixelSize: 2,
-          inkColor: "#211F1D",
-          paperColor: "#F3EDE2",
+          inkColor: "#120f17",
+          paperColor: "#f4f1ea",
           revealRadius: radius,
           softness: 0.6,
           linger: reduced ? 0.15 : 1,
@@ -94,7 +94,16 @@
         if (img.complete && img.naturalWidth) mount();
         else {
           img.addEventListener("load", mount, { once: true });
-          img.addEventListener("error", enableFallback, { once: true });
+          img.addEventListener("error", function () {
+            if (!img.dataset.fallbackTried && img.src !== "assets/images/showcase.jpg") {
+              img.dataset.fallbackTried = "true";
+              img.src = "assets/images/showcase.jpg";
+              img.addEventListener("load", mount, { once: true });
+              img.addEventListener("error", enableFallback, { once: true });
+            } else {
+              enableFallback();
+            }
+          }, { once: true });
         }
       }).catch(enableFallback);
       if (img.loading === "lazy") img.loading = "eager";
