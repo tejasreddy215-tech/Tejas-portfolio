@@ -4,15 +4,19 @@
 
    - The 66 KB bundle (port + ogl) is fetched only when the section is near
      the viewport.
-   - If WebGL2 is missing, the image fails to decode or the context is lost,
-     a CSS-mask fallback reveals colour under the cursor instead.
-   - The component pauses itself off-screen and cleans up on destroy().
+   - If the remote Unsplash image fails to load, retries automatically with
+     the local cached copy (assets/images/showcase.jpg).
+   - If WebGL2 is missing or context is lost, a CSS-mask fallback reveals
+     colour under the cursor instead.
+   - Wires optional pattern/palette controls ([data-dither-pattern],
+     [data-dither-palette]) to instance.update().
    ========================================================================== */
 (function () {
   "use strict";
   var P = (window.Portfolio = window.Portfolio || {});
 
   var BUNDLE = "js/dither-veil.bundle.js";
+  var LOCAL_FALLBACK_SRC = "assets/images/showcase.jpg";
 
   function loadBundle() {
     return new Promise(function (resolve, reject) {
@@ -37,7 +41,7 @@
     var hint = document.getElementById("veilHintText");
     if (hint) hint.textContent = coarse ? "Touch & drag to reveal" : "Move to reveal · click to ripple";
 
-    var instance = null, destroyed = false;
+    var instance = null, destroyed = false, triedLocal = false;
 
     veil.addEventListener("pointerdown", function () { veil.classList.add("is-touched"); }, { passive: true });
     veil.addEventListener("pointermove", function () { veil.classList.add("is-touched"); }, { passive: true });
@@ -65,12 +69,13 @@
       });
     }
 
-    function mount() {
+    function mountWithSrc(srcUrl) {
       if (destroyed) return;
+      if (instance) { instance.destroy(); instance = null; }
       var radius = veil.clientWidth < 640 ? 120 : 200;
       try {
         instance = P.createDitherVeil(stage, {
-          src: img.currentSrc || img.src,
+          src: srcUrl,
           fit: "cover",
           pattern: "floyd",
           palette: "duotone",
@@ -82,31 +87,50 @@
           linger: reduced ? 0.15 : 1,
           clickBurst: !reduced,
           onReady: function () { veil.classList.add("is-webgl"); },
-          onError: enableFallback
+          onError: function () {
+            if (!triedLocal && srcUrl !== LOCAL_FALLBACK_SRC) {
+              triedLocal = true;
+              img.src = LOCAL_FALLBACK_SRC;
+              mountWithSrc(LOCAL_FALLBACK_SRC);
+            } else {
+              enableFallback();
+            }
+          }
         });
       } catch (err) {
         enableFallback();
       }
     }
 
+    /* ---------- interactive pattern / palette toolbar ---------- */
+    document.querySelectorAll("[data-dither-pattern]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var pat = btn.getAttribute("data-dither-pattern");
+        document.querySelectorAll("[data-dither-pattern]").forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+        if (instance) instance.update({ pattern: pat });
+      });
+    });
+
+    document.querySelectorAll("[data-dither-palette]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var pal = btn.getAttribute("data-dither-palette");
+        document.querySelectorAll("[data-dither-palette]").forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+        if (instance) instance.update({ palette: pal });
+      });
+    });
+
     function start() {
       loadBundle().then(function () {
-        if (img.complete && img.naturalWidth) mount();
-        else {
-          img.addEventListener("load", mount, { once: true });
-          img.addEventListener("error", function () {
-            if (!img.dataset.fallbackTried && img.src !== "assets/images/showcase.jpg") {
-              img.dataset.fallbackTried = "true";
-              img.src = "assets/images/showcase.jpg";
-              img.addEventListener("load", mount, { once: true });
-              img.addEventListener("error", enableFallback, { once: true });
-            } else {
-              enableFallback();
-            }
-          }, { once: true });
-        }
+        mountWithSrc(img.currentSrc || img.src || LOCAL_FALLBACK_SRC);
       }).catch(enableFallback);
-      if (img.loading === "lazy") img.loading = "eager";
     }
 
     function destroy() {

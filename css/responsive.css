@@ -18,12 +18,15 @@
   .nav__links, .nav__resume { display: none; }
   .nav__toggle { display: block; }
 
-  .hero { padding-top: 104px; align-items: flex-start; }
+  .hero { padding-top: 104px; align-items: stretch; }
   .hero__grid { grid-template-columns: 1fr; gap: 40px; }
   .hero__art { width: min(78vw, 420px); }
   .hero__scroll { display: none; }
+  .dossier-bar { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .dossier-bar__item:nth-child(2n) { border-right: 0; padding-right: 0; }
 
   .section__head--split { grid-template-columns: 1fr; align-items: start; }
+  .veil-toolbar { border-radius: 20px; }
 
   .about__grid { grid-template-columns: 1fr; }
   .about__portrait, .about__copy { grid-column: 1; }
@@ -43,11 +46,16 @@
 
   .hero__cta .btn { flex: 1 1 auto; }
   .hero__status { white-space: normal; line-height: 1.5; }
+  .dossier-bar { grid-template-columns: 1fr; padding: 16px 20px; }
+  .dossier-bar__item { border-right: 0; padding-right: 0; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .dossier-bar__item:last-child { padding-bottom: 0; border-bottom: 0; }
 
   .orbit__stage { --item: 64px; height: 420px; }
   .orbit__center { padding-inline: 12%; }
-  .orbit__center h3 { font-size: clamp(2.2rem, 12vw, 3.2rem); }
-  .orbit__center span { font-size: .85rem; }
+  .orbit__center h3 { font-size: clamp(2rem, 11vw, 3rem); }
+  .orbit__center > span { font-size: .82rem; }
+  .orbit__label { display: none; }
+  .orbit__hint { width: 100%; order: 3; font-size: .64rem; }
 
   .veil { aspect-ratio: 4 / 5; border-radius: 28px; }
   .veil__hint { left: 12px; bottom: 12px; }

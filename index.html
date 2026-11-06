@@ -83,12 +83,12 @@
       <a href="#home" data-nav="home">Home</a>
       <a href="#about" data-nav="about">About</a>
       <a href="#skills" data-nav="skills">Skills</a>
-      <a href="#experience" data-nav="experience">Experience</a>
       <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#experience" data-nav="experience">Experience</a>
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
 
-    <a href="#" class="btn btn--small btn--ghost nav__resume" data-resume hidden>Resume</a>
+    <a href="#contact" class="btn btn--small btn--ghost nav__resume" data-resume><span>Resume</span></a>
 
     <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <span></span><span></span>
@@ -101,12 +101,12 @@
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
-    <a href="#" class="menu__resume" data-resume hidden>Resume</a>
+    <a href="#contact" class="menu__resume" data-resume>Resume</a>
   </nav>
-  <p class="menu__foot mono">Pondicherry, India</p>
+  <p class="menu__foot mono">Pondicherry, India · K. Tejas Reddy</p>
 </div>
 
 <main id="main">
@@ -133,27 +133,58 @@
       <div class="hero__cta" data-reveal>
         <a href="#projects" class="btn btn--primary" data-magnetic><span>Explore my work</span></a>
         <a href="#contact" class="btn btn--ghost" data-magnetic><span>Let's connect</span></a>
-        <a href="#" class="btn btn--text" data-resume hidden><span>Download resume</span></a>
+        <a href="#contact" class="btn btn--text" data-resume><span>Download resume</span></a>
       </div>
     </div>
 
     <div class="hero__art" data-reveal aria-hidden="true">
       <div class="art" id="heroArt">
-        <div class="art__layer art__layer--disc" data-depth="14"></div>
-        <div class="art__layer art__layer--ring" data-depth="26">
+        <svg class="art__frame" viewBox="0 0 440 440" fill="none" stroke="currentColor" data-depth="10">
+          <circle cx="220" cy="220" r="206" stroke-opacity=".16" stroke-dasharray="3 7"/>
+          <circle cx="220" cy="220" r="142" stroke-opacity=".14"/>
+          <line x1="220" y1="6" x2="220" y2="38" stroke-opacity=".28"/>
+          <line x1="220" y1="402" x2="220" y2="434" stroke-opacity=".28"/>
+          <line x1="6" y1="220" x2="38" y2="220" stroke-opacity=".28"/>
+          <line x1="402" y1="220" x2="434" y2="220" stroke-opacity=".28"/>
+        </svg>
+        <div class="art__layer art__layer--disc" data-depth="18"></div>
+        <div class="art__layer art__layer--ring" data-depth="28">
           <svg viewBox="0 0 400 400" class="art__ring">
             <defs><path id="ringPath" d="M200,200 m-165,0 a165,165 0 1,1 330,0 a165,165 0 1,1 -330,0"/></defs>
             <text><textPath href="#ringPath" startOffset="0">Python · C++ · JavaScript · SQL · LLMs · Machine Learning · Full-stack ·</textPath></text>
           </svg>
         </div>
-        <div class="art__layer art__layer--core" data-depth="40"><span>T</span></div>
+        <div class="art__layer art__layer--core" data-depth="42"><span>T</span></div>
         <span class="art__chip art__chip--a" data-depth="60">Python</span>
         <span class="art__chip art__chip--b" data-depth="52">LLMs</span>
         <span class="art__chip art__chip--c" data-depth="68">C++</span>
+        <span class="art__chip art__chip--d" data-depth="48">SQL</span>
         <span class="art__dot art__dot--a" data-depth="34"></span>
         <span class="art__dot art__dot--b" data-depth="46"></span>
       </div>
     </div>
+  </div>
+
+  <!-- Preserved Dossier Metadata Bar from original portfolio -->
+  <div class="wrap hero__dossier" data-reveal>
+    <dl class="dossier-bar">
+      <div class="dossier-bar__item">
+        <dt class="mono">01 · Degree</dt>
+        <dd>B.Tech CSE — AI &amp; Data Science</dd>
+      </div>
+      <div class="dossier-bar__item">
+        <dt class="mono">02 · Institution</dt>
+        <dd>NIAT — Takshasila Institute</dd>
+      </div>
+      <div class="dossier-bar__item">
+        <dt class="mono">03 · Location</dt>
+        <dd>Pondicherry, Tamil Nadu, IN</dd>
+      </div>
+      <div class="dossier-bar__item">
+        <dt class="mono">04 · Focus</dt>
+        <dd>Machine Learning · LLMs · Full-Stack</dd>
+      </div>
+    </dl>
   </div>
 
   <a href="#about" class="hero__scroll mono" aria-label="Scroll to About">
@@ -191,11 +222,12 @@
 
     <div class="about__grid">
       <figure class="about__portrait" data-reveal="clip">
-        <div class="portrait" role="img" aria-label="Portrait placeholder for Tejas Reddy">
+        <div class="portrait" role="img" aria-label="Editorial monogram portrait plate for K. Tejas Reddy">
+          <span class="portrait__head mono">K. TEJAS REDDY · NIAT</span>
           <span class="portrait__mono">T</span>
-          <span class="portrait__tag mono">Portrait placeholder</span>
+          <span class="portrait__tag mono">11.9416° N · 79.8083° E</span>
         </div>
-        <figcaption class="mono">Add your photo → <code>assets/images/profile.jpg</code></figcaption>
+        <figcaption class="mono">Editorial monogram plate · Pondicherry, IN</figcaption>
       </figure>
 
       <div class="about__copy">
@@ -237,17 +269,19 @@
 <!-- ======================= 05 · SKILLS ======================= -->
 <section class="section skills" id="skills" data-nav="skills" aria-labelledby="skillsTitle">
   <div class="wrap">
-    <header class="section__head">
-      <p class="eyebrow mono" data-reveal><span>02</span> Technical skills</p>
-      <h2 class="display" id="skillsTitle" data-split>What I actually work with</h2>
-      <p class="section__intro" data-reveal>I try to understand why each tool earns its place, rather than collecting a list of languages.</p>
+    <header class="section__head section__head--split">
+      <div>
+        <p class="eyebrow mono" data-reveal><span>02</span> Technical skills</p>
+        <h2 class="display" id="skillsTitle" data-split>What I actually work with</h2>
+      </div>
+      <p class="section__intro" data-reveal>I'm not just a list of languages — I try to understand why each one earns its place: Python for intelligence, C++ for performance, JavaScript for experience, SQL for the ground truth underneath it all.</p>
     </header>
 
     <div class="skills__grid">
       <article class="skill-card spotlight" data-reveal>
         <div class="skill-card__top">
           <svg class="skill-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 14 8 24l10 10M30 14l10 10-10 10M27 10l-6 28"/></svg>
-          <span class="skill-card__no mono">01</span>
+          <span class="skill-card__no mono">01 · Core</span>
         </div>
         <h3>Programming</h3>
         <ul class="chips">
@@ -259,11 +293,11 @@
       <article class="skill-card spotlight" data-reveal>
         <div class="skill-card__top">
           <svg class="skill-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="12" rx="14" ry="5"/><path d="M10 12v12c0 2.8 6.3 5 14 5s14-2.2 14-5V12M10 24v12c0 2.8 6.3 5 14 5s14-2.2 14-5V24"/></svg>
-          <span class="skill-card__no mono">02</span>
+          <span class="skill-card__no mono">02 · Storage</span>
         </div>
         <h3>Data &amp; databases</h3>
         <ul class="chips">
-          <li>DBMS &amp; SQL</li><li>NoSQL</li><li>Data analysis</li>
+          <li>DBMS &amp; SQL</li><li>SQL &amp; NoSQL</li><li>Data analysis</li>
         </ul>
         <p>SQL for the ground truth underneath everything else.</p>
       </article>
@@ -271,7 +305,7 @@
       <article class="skill-card spotlight" data-reveal>
         <div class="skill-card__top">
           <svg class="skill-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="14" r="4"/><circle cx="10" cy="34" r="4"/><circle cx="24" cy="24" r="4"/><circle cx="38" cy="14" r="4"/><circle cx="38" cy="34" r="4"/><path d="m13.5 16 7 6M13.5 32l7-6M27.5 22l7-6M27.5 26l7 6"/></svg>
-          <span class="skill-card__no mono">03</span>
+          <span class="skill-card__no mono">03 · Intelligence</span>
         </div>
         <h3>AI &amp; machine learning</h3>
         <ul class="chips">
@@ -283,7 +317,7 @@
       <article class="skill-card spotlight" data-reveal>
         <div class="skill-card__top">
           <svg class="skill-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="12" r="4"/><circle cx="14" cy="36" r="4"/><circle cx="34" cy="20" r="4"/><path d="M14 16v16M34 24c0 6-8 4-18 10"/></svg>
-          <span class="skill-card__no mono">04</span>
+          <span class="skill-card__no mono">04 · Systems</span>
         </div>
         <h3>Foundations &amp; tools</h3>
         <ul class="chips">
@@ -300,11 +334,27 @@
   <div class="wrap">
     <header class="section__head section__head--split">
       <div>
-        <p class="eyebrow mono" data-reveal><span>03</span> Visual showcase</p>
+        <p class="eyebrow mono" data-reveal><span>03</span> Visual showcase · React Bits DitherVeil</p>
         <h2 class="display" id="showcaseTitle" data-split>Burn through the <em>dither.</em></h2>
       </div>
-      <p class="section__intro" data-reveal>An image rendered as a two-tone dither. Move across it to reveal full colour — the veil knits itself back together. Click or tap for a ripple.</p>
+      <p class="section__intro" data-reveal>An image rendered as a live WebGL2 two-tone dither. Move across it to reveal full colour — the veil knits itself back together cell by cell. Click or tap to send a shockwave ripple.</p>
     </header>
+
+    <div class="veil-toolbar" data-reveal role="toolbar" aria-label="Dither shader controls">
+      <div class="veil-toolbar__group">
+        <span class="veil-toolbar__label mono">Pattern</span>
+        <button type="button" class="veil-pill mono is-active" data-dither-pattern="floyd" aria-pressed="true">Floyd–Steinberg</button>
+        <button type="button" class="veil-pill mono" data-dither-pattern="atkinson" aria-pressed="false">Atkinson</button>
+        <button type="button" class="veil-pill mono" data-dither-pattern="bayer" aria-pressed="false">Bayer 8×8</button>
+        <button type="button" class="veil-pill mono" data-dither-pattern="noise" aria-pressed="false">Blue noise</button>
+        <button type="button" class="veil-pill mono" data-dither-pattern="lines" aria-pressed="false">Engraving</button>
+      </div>
+      <div class="veil-toolbar__group">
+        <span class="veil-toolbar__label mono">Palette</span>
+        <button type="button" class="veil-pill mono is-active" data-dither-palette="duotone" aria-pressed="true">Duotone</button>
+        <button type="button" class="veil-pill mono" data-dither-palette="rgb" aria-pressed="false">Retro RGB</button>
+      </div>
+    </div>
 
     <div class="veil" id="veil" data-reveal="clip">
       <img class="veil__img" id="veilImg" src="https://images.unsplash.com/photo-1737071371043-761e02b1ef95?q=80&w=1400&auto=format&fit=crop" width="1400" height="933" loading="lazy" decoding="async"
@@ -318,19 +368,28 @@
 <!-- ======================= 07 · PROJECTS (ORBIT) ======================= -->
 <section class="section projects" id="projects" data-nav="projects" aria-labelledby="projectsTitle">
   <div class="wrap">
-    <header class="section__head section__head--light">
-      <p class="eyebrow mono" data-reveal><span>04</span> Projects</p>
-      <h2 class="display" id="projectsTitle" data-split>A few things I've built</h2>
+    <header class="section__head section__head--split section__head--light">
+      <div>
+        <p class="eyebrow mono" data-reveal><span>04</span> Projects · OrbitImages</p>
+        <h2 class="display" id="projectsTitle" data-split>A few things I've built</h2>
+      </div>
+      <p class="section__intro" data-reveal>Spin the orbital gallery, click any satellite to bring it forward, or browse the index below. Live demo and repository links appear automatically once added to <code>js/data.js</code>.</p>
     </header>
 
     <div class="orbit" id="orbit" data-reveal>
       <div class="orbit__stage" id="orbitStage" role="group" aria-label="Project gallery. Drag or use the arrow keys to rotate; select a project to see details.">
         <div class="orbit__center">
+          <p class="orbit__kicker mono">Interactive archive</p>
           <h3>Selected <em>Work</em></h3>
           <span>A collection of ideas, experiments and engineering projects.</span>
         </div>
       </div>
-      <p class="orbit__hint mono" aria-hidden="true">Drag to spin · Click a project to bring it forward</p>
+
+      <div class="orbit__bar">
+        <button type="button" class="orbit__ctrl mono" id="orbitPrev" aria-label="Previous project">← Prev</button>
+        <p class="orbit__hint mono"><span id="orbitCounter">01 / 06</span> · Drag to spin or click a project</p>
+        <button type="button" class="orbit__ctrl mono" id="orbitNext" aria-label="Next project">Next →</button>
+      </div>
     </div>
 
     <article class="detail" id="projectDetail" aria-live="polite">
@@ -345,7 +404,7 @@
     </article>
 
     <div class="cards-head">
-      <h3 class="mono">All projects</h3>
+      <h3 class="mono">Complete project index</h3>
       <span class="mono" id="projectCount"></span>
     </div>
     <ul class="cards" id="projectCards"></ul>
@@ -356,42 +415,45 @@
 <!-- ======================= 08 · EXPERIENCE ======================= -->
 <section class="section journey" id="experience" data-nav="experience" aria-labelledby="journeyTitle">
   <div class="wrap">
-    <header class="section__head">
-      <p class="eyebrow mono" data-reveal><span>05</span> Experience &amp; journey</p>
-      <h2 class="display" id="journeyTitle" data-split>The journey so far</h2>
+    <header class="section__head section__head--split">
+      <div>
+        <p class="eyebrow mono" data-reveal><span>05</span> Experience &amp; journey</p>
+        <h2 class="display" id="journeyTitle" data-split>The journey so far</h2>
+      </div>
+      <p class="section__intro" data-reveal>Verified academic milestones and reserved timeline slots ready for upcoming internships, research and achievements.</p>
     </header>
 
     <ol class="timeline" id="timeline">
       <li class="timeline__item" data-reveal>
-        <span class="timeline__when mono">Now</span>
+        <span class="timeline__when mono">Current</span>
         <div class="timeline__body">
           <h3>B.Tech, Computer Science — AI &amp; Data Science</h3>
-          <p>Studying at NIAT — Takshasila Institute, Pondicherry, focusing on machine learning, LLMs and full-stack systems.</p>
-          <span class="tag-label mono">Education</span>
+          <p>Studying at NIAT — Takshasila Institute, Pondicherry, focusing on machine learning, large language models, database internals and full-stack systems.</p>
+          <span class="tag-label mono">Verified · Education</span>
         </div>
       </li>
       <li class="timeline__item is-placeholder" data-reveal>
-        <span class="timeline__when mono">Add year</span>
+        <span class="timeline__when mono">Upcoming</span>
         <div class="timeline__body">
-          <h3>Internship or professional role</h3>
-          <p>Editable placeholder — add the organisation, role and what you shipped.</p>
-          <span class="tag-label mono">Placeholder · Experience</span>
+          <h3>Internship or Engineering Role</h3>
+          <p>Reserved timeline slot — open to software engineering, AI/ML and full-stack internships. Update this entry in <code>index.html</code> as roles are confirmed.</p>
+          <span class="tag-label mono">Editable placeholder · Experience</span>
         </div>
       </li>
       <li class="timeline__item is-placeholder" data-reveal>
-        <span class="timeline__when mono">Add year</span>
+        <span class="timeline__when mono">Milestone</span>
         <div class="timeline__body">
-          <h3>Academic milestone</h3>
-          <p>Editable placeholder — add a course, research project, or competition.</p>
-          <span class="tag-label mono">Placeholder · Milestone</span>
+          <h3>Academic Research or Capstone Milestone</h3>
+          <p>Reserved timeline slot — add coursework breakthroughs, hackathons, or research publications here.</p>
+          <span class="tag-label mono">Editable placeholder · Milestone</span>
         </div>
       </li>
       <li class="timeline__item is-placeholder" data-reveal>
-        <span class="timeline__when mono">Add year</span>
+        <span class="timeline__when mono">Recognition</span>
         <div class="timeline__body">
-          <h3>Achievement or certification</h3>
-          <p>Editable placeholder — only add what you can verify.</p>
-          <span class="tag-label mono">Placeholder · Achievement</span>
+          <h3>Verified Certification or Achievement</h3>
+          <p>Reserved timeline slot — add verified certifications, competitive programming ranks, or awards.</p>
+          <span class="tag-label mono">Editable placeholder · Achievement</span>
         </div>
       </li>
     </ol>
@@ -409,10 +471,10 @@
     <dl class="edu" data-reveal>
       <div><dt class="mono">Institution</dt><dd>NIAT — Takshasila Institute</dd></div>
       <div><dt class="mono">Programme</dt><dd>B.Tech, Computer Science</dd></div>
-      <div><dt class="mono">Specialisation</dt><dd>Artificial Intelligence &amp; Data Science</dd></div>
+      <div><dt class="mono">Department / Track</dt><dd>Artificial Intelligence &amp; Data Science</dd></div>
       <div><dt class="mono">Location</dt><dd>Pondicherry, Tamil Nadu, India</dd></div>
-      <div><dt class="mono">Focus</dt><dd>Machine Learning · LLMs · Full-Stack Systems</dd></div>
-      <div class="is-placeholder"><dt class="mono">Timeline</dt><dd>Add start &amp; expected graduation year</dd></div>
+      <div><dt class="mono">Core areas</dt><dd>Machine Learning · LLMs · Full-Stack Systems · DBMS</dd></div>
+      <div class="is-placeholder"><dt class="mono">Cohort timeline</dt><dd>Currently enrolled · Add start &amp; expected graduation year</dd></div>
     </dl>
   </div>
 </section>
@@ -430,7 +492,7 @@
         <p class="contact__body" data-reveal>Whether it's an internship, a collaboration, a role on your team, or just a good conversation about AI — send it over. I read everything myself.</p>
 
         <a class="contact__mail" href="mailto:tejasreddy005@gmail.com" data-reveal data-magnetic>
-          <span class="mono">Email</span>
+          <span class="mono">Direct email</span>
           <strong>tejasreddy005@gmail.com</strong>
           <i aria-hidden="true">↗</i>
         </a>
@@ -446,7 +508,7 @@
         <div class="form__row">
           <div class="field">
             <label for="name">Your name</label>
-            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Arjun Sharma" required>
           </div>
           <div class="field">
             <label for="email">Your email</label>
@@ -495,7 +557,7 @@
     </div>
   </div>
   <div class="wrap footer__base">
-    <p class="mono">&copy; <span id="year">2025</span> K. Tejas Reddy</p>
+    <p class="mono">&copy; <span id="year">2025</span> K. Tejas Reddy · Pondicherry, IN</p>
     <button type="button" class="footer__top mono" id="backToTop">Back to top <span aria-hidden="true">↑</span></button>
   </div>
 </footer>

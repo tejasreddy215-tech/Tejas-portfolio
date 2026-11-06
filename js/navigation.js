@@ -1,6 +1,6 @@
 /* ==========================================================================
-   navigation.js — sticky header, active-section indicator, accessible
-   mobile menu, and back-to-top.
+   navigation.js — sticky header, scroll progress bar, active-section
+   indicator, accessible mobile menu, and back-to-top.
    ========================================================================== */
 (function () {
   "use strict";
@@ -10,8 +10,18 @@
     var nav = document.getElementById("nav");
     if (!nav) return;
     var ticking = false;
-    function update() { ticking = false; nav.classList.toggle("is-stuck", window.scrollY > 24); }
+    function update() {
+      ticking = false;
+      var y = window.scrollY || window.pageYOffset || 0;
+      nav.classList.toggle("is-stuck", y > 24);
+      var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      var pct = Math.max(0, Math.min(1, y / maxScroll));
+      nav.style.setProperty("--scroll", pct.toFixed(4));
+    }
     window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener("resize", function () {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
     update();

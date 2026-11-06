@@ -13,13 +13,32 @@
   }
 
   function initResume() {
-    var show = typeof cfg.resumeUrl === "string" && cfg.resumeUrl.length > 0;
+    var hasPdf = typeof cfg.resumeUrl === "string" && cfg.resumeUrl.trim().length > 0;
     document.querySelectorAll("[data-resume]").forEach(function (a) {
-      if (!show) { a.hidden = true; return; }
-      a.href = cfg.resumeUrl;
-      a.target = "_blank";
-      a.rel = "noopener";
       a.hidden = false;
+      if (hasPdf) {
+        a.href = cfg.resumeUrl;
+        a.target = "_blank";
+        a.rel = "noopener";
+      } else {
+        a.href = "#contact";
+        a.addEventListener("click", function (e) {
+          var contact = document.getElementById("contact");
+          var subj = document.getElementById("subject");
+          var nameInput = document.getElementById("name");
+          var status = document.getElementById("formStatus");
+          if (contact) {
+            e.preventDefault();
+            contact.scrollIntoView({ behavior: P.motion && P.motion.reduced() ? "auto" : "smooth" });
+          }
+          if (subj && !subj.value) subj.value = "Resume Request — K. Tejas Reddy";
+          if (status) {
+            status.textContent = "Resume PDF is being updated — send a quick note below and I’ll share the latest copy.";
+            status.className = "form__status ok";
+          }
+          if (nameInput) setTimeout(function () { nameInput.focus({ preventScroll: true }); }, 550);
+        });
+      }
     });
   }
 
@@ -35,15 +54,15 @@
     }
 
     root.classList.add("is-loading");
-    var MIN = 1100, CAP = 3500, start = performance.now(), loaded = false, shown = 0, finished = false;
+    var MIN = 1000, CAP = 3200, start = performance.now(), loaded = false, shown = 0, finished = false;
 
     function finish() {
       if (finished) return;
       finished = true;
       root.classList.remove("is-loading");
       pre.classList.add("is-done");
-      setTimeout(function () { pre.hidden = true; }, 1100);
-      setTimeout(done, 350);
+      setTimeout(function () { pre.hidden = true; }, 1050);
+      setTimeout(done, 320);
     }
     function markLoaded() { loaded = true; }
 
@@ -56,7 +75,7 @@
     (function tick(now) {
       var elapsed = now - start;
       var target = (loaded || elapsed > CAP) ? Math.min(1, elapsed / MIN) : Math.min(0.9, elapsed / MIN);
-      shown += (target - shown) * 0.16;
+      shown += (target - shown) * 0.18;
       bar.style.transform = "scaleX(" + shown.toFixed(3) + ")";
       num.textContent = String(Math.round(shown * 100)).padStart(2, "0");
       if ((loaded || elapsed > CAP) && elapsed >= MIN && shown > 0.985) {

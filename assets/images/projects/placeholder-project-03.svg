@@ -1,1 +1,30 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="Project thumbnail placeholder 03"><rect width="600" height="500" fill="#A98A61"/><circle cx="300" cy="250" r="130" fill="#211F1D" fill-opacity=".9"/><circle cx="300" cy="250" r="70" fill="#F3EDE2" fill-opacity=".85"/><text x="30" y="62" font-family="Georgia,serif" font-size="44" font-style="italic" fill="#F3EDE2">03</text><text x="30" y="470" font-family="Courier New,monospace" font-size="20" letter-spacing="3" fill="#F3EDE2" fill-opacity=".8">THUMBNAIL PLACEHOLDER</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="03 — High-Performance DB Query Engine">
+  <defs>
+    <radialGradient id="g3" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#BCA07A"/>
+      <stop offset="100%" stop-color="#8B704D"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="500" fill="url(#g3)"/>
+  <rect x="28" y="28" width="544" height="444" rx="28" fill="none" stroke="#211F1D" stroke-opacity="0.28" stroke-width="1.5"/>
+  <!-- B+ Tree / Storage cylinder schematic -->
+  <circle cx="300" cy="250" r="118" fill="#211F1D"/>
+  <g stroke="#F3EDE2" stroke-width="1.8" fill="none">
+    <!-- Root node -->
+    <rect x="262" y="168" width="76" height="28" rx="6" fill="#B86F4B" stroke="#F3EDE2"/>
+    <!-- Connectors -->
+    <path d="M 282 196 L 235 236 M 300 196 L 300 236 M 318 196 L 365 236" stroke="#A98A61"/>
+    <!-- Leaf nodes -->
+    <rect x="202" y="236" width="64" height="26" rx="5" fill="#2D2926"/>
+    <rect x="268" y="236" width="64" height="26" rx="5" fill="#2D2926"/>
+    <rect x="334" y="236" width="64" height="26" rx="5" fill="#2D2926"/>
+    <!-- Disk pages bar -->
+    <rect x="214" y="286" width="172" height="32" rx="8" fill="#181614" stroke="#A98A61"/>
+    <line x1="257" y1="286" x2="257" y2="318" stroke="#A98A61"/>
+    <line x1="300" y1="286" x2="300" y2="318" stroke="#A98A61"/>
+    <line x1="343" y1="286" x2="343" y2="318" stroke="#A98A61"/>
+  </g>
+  <text x="54" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" fill="#211F1D">03</text>
+  <text x="546" y="72" text-anchor="end" font-family="Consolas, monospace" font-size="13" letter-spacing="2" fill="#211F1D">C++ · SYSTEMS</text>
+  <text x="300" y="446" text-anchor="middle" font-family="Consolas, monospace" font-size="13" letter-spacing="2.5" fill="#211F1D">DB QUERY ENGINE</text>
+</svg>

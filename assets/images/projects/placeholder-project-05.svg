@@ -1,1 +1,10 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="Project thumbnail placeholder 05"><rect width="600" height="500" fill="#3a342f"/><path d="M90 400 Q 300 80 510 400Z" fill="#B86F4B" fill-opacity=".9"/><circle cx="300" cy="300" r="42" fill="#F3EDE2" fill-opacity=".85"/><text x="30" y="62" font-family="Georgia,serif" font-size="44" font-style="italic" fill="#F3EDE2">05</text><text x="30" y="470" font-family="Courier New,monospace" font-size="20" letter-spacing="3" fill="#F3EDE2" fill-opacity=".8">THUMBNAIL PLACEHOLDER</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="05 — Project Placeholder 05">
+  <rect width="600" height="500" fill="#2B2724"/>
+  <rect x="28" y="28" width="544" height="444" rx="28" fill="none" stroke="#F3EDE2" stroke-opacity="0.22" stroke-dasharray="6 6" stroke-width="1.5"/>
+  <circle cx="300" cy="250" r="110" fill="none" stroke="#B86F4B" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="300" cy="250" r="74" fill="#211F1D" stroke="#F3EDE2" stroke-opacity="0.3" stroke-width="1.5"/>
+  <path d="M 284 250 H 316 M 300 234 V 266" stroke="#B86F4B" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="54" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" fill="#F3EDE2">05</text>
+  <text x="546" y="72" text-anchor="end" font-family="Consolas, monospace" font-size="13" letter-spacing="2" fill="#B86F4B">PLACEHOLDER</text>
+  <text x="300" y="446" text-anchor="middle" font-family="Consolas, monospace" font-size="13" letter-spacing="2.5" fill="#F3EDE2" fill-opacity="0.75">RESERVED SLOT 05</text>
+</svg>

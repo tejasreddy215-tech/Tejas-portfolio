@@ -1,1 +1,15 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="Project thumbnail placeholder 04"><rect width="600" height="500" fill="#E8DFD1"/><rect x="150" y="130" width="300" height="240" rx="36" fill="#B86F4B" fill-opacity=".9"/><rect x="190" y="180" width="140" height="14" rx="7" fill="#211F1D" fill-opacity=".8"/><rect x="190" y="210" width="220" height="14" rx="7" fill="#211F1D" fill-opacity=".5"/><rect x="190" y="240" width="100" height="14" rx="7" fill="#211F1D" fill-opacity=".5"/><text x="30" y="62" font-family="Georgia,serif" font-size="44" font-style="italic" fill="#211F1D">04</text><text x="30" y="470" font-family="Courier New,monospace" font-size="20" letter-spacing="3" fill="#211F1D" fill-opacity=".8">THUMBNAIL PLACEHOLDER</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="04 — AI-Powered Learning Platform">
+  <rect width="600" height="500" fill="#E8DFD1"/>
+  <rect x="28" y="28" width="544" height="444" rx="28" fill="none" stroke="#211E1A" stroke-opacity="0.22" stroke-width="1.5"/>
+  <!-- Adaptive learning concentric rings -->
+  <circle cx="300" cy="250" r="126" fill="#211F1D"/>
+  <circle cx="300" cy="250" r="96" fill="none" stroke="#F3EDE2" stroke-opacity="0.2" stroke-width="8"/>
+  <path d="M 300 154 A 96 96 0 1 1 212 288" fill="none" stroke="#B86F4B" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="300" cy="250" r="64" fill="none" stroke="#F3EDE2" stroke-opacity="0.2" stroke-width="6"/>
+  <path d="M 300 186 A 64 64 0 1 1 246 284" fill="none" stroke="#A98A61" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="300" cy="250" r="26" fill="#B86F4B"/>
+  <path d="M 292 250 L 298 256 L 310 244" fill="none" stroke="#F3EDE2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="54" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" fill="#211E1A">04</text>
+  <text x="546" y="72" text-anchor="end" font-family="Consolas, monospace" font-size="13" letter-spacing="2" fill="#94512F">FULL STACK · AI</text>
+  <text x="300" y="446" text-anchor="middle" font-family="Consolas, monospace" font-size="13" letter-spacing="2.5" fill="#211E1A">LEARNING PLATFORM</text>
+</svg>

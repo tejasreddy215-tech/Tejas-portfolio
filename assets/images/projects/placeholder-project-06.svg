@@ -1,1 +1,13 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="Project thumbnail placeholder 06"><rect width="600" height="500" fill="#F3EDE2"/><circle cx="300" cy="250" r="130" fill="#A98A61" fill-opacity=".9"/><circle cx="300" cy="250" r="70" fill="#211F1D" fill-opacity=".85"/><text x="30" y="62" font-family="Georgia,serif" font-size="44" font-style="italic" fill="#211F1D">06</text><text x="30" y="470" font-family="Courier New,monospace" font-size="20" letter-spacing="3" fill="#211F1D" fill-opacity=".8">THUMBNAIL PLACEHOLDER</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" role="img" aria-label="06 — Project Placeholder 06">
+  <rect width="600" height="500" fill="#F3EDE2"/>
+  <rect x="28" y="28" width="544" height="444" rx="28" fill="none" stroke="#211E1A" stroke-opacity="0.24" stroke-dasharray="6 6" stroke-width="1.5"/>
+  <circle cx="300" cy="250" r="110" fill="#E8DFD1" stroke="#A98A61" stroke-width="1.5"/>
+  <g stroke="#211F1D" stroke-width="1.6" fill="none">
+    <polygon points="300,195 355,222 300,249 245,222" fill="#F3EDE2"/>
+    <polyline points="245,246 300,273 355,246"/>
+    <polyline points="245,270 300,297 355,270" stroke="#B86F4B"/>
+  </g>
+  <text x="54" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" fill="#211E1A">06</text>
+  <text x="546" y="72" text-anchor="end" font-family="Consolas, monospace" font-size="13" letter-spacing="2" fill="#94512F">PLACEHOLDER</text>
+  <text x="300" y="446" text-anchor="middle" font-family="Consolas, monospace" font-size="13" letter-spacing="2.5" fill="#211E1A" fill-opacity="0.75">RESERVED SLOT 06</text>
+</svg>
